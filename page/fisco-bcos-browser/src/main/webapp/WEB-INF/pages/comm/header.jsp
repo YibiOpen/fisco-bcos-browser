@@ -3,7 +3,7 @@
 <div class="header">
     <div class="collapse navbar-collapse mega-menu navbar-responsive-collapse">
         <div class="container">
-            <div class="nav-left"><font style="margin-left: 10px;" height="74px">FISCO BCOS</font></div>
+            <div class="nav-left"><font style="margin-left: 10px;" height="74px">YIBI TECH</font></div>
             <ul class="nav navbar-nav">
                 <li id="LI_default"><a href="../home/home.page">首页</a></li>
                 <li id="LI_configure" class="dropdown">
