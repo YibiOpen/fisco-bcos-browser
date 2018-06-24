@@ -4,3 +4,7 @@
 build
 out
 dist
+**/*.crt
+**/*.jks
+**/*.keystore
+**/*-chain.xml
