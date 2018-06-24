@@ -3,7 +3,7 @@
 <html>
 <head>
 
-    <title>FISCO-BCOS Browser</title>
+    <title>YIBI-CHAIN Browser</title>
     <link rel="stylesheet" href="../assets/css/profile.css">
     <%--公共的css和js文件--%>
     <%@ include file="../pages/comm/JSandCSS.jsp"%>
