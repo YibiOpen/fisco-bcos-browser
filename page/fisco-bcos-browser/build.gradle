@@ -96,6 +96,7 @@ dependencies {
     runtime 'io.netty:netty-tcnative:2.0.0.Final'
     compile 'com.google.guava:guava:19.0'
     runtime 'com.google.guava:guava:19.0'
+
     compile files('libs/web3sdk.jar')
     compile files('libs/ocs-sdk.jar')
     // web3j依赖
@@ -108,8 +109,6 @@ dependencies {
             'com.sun.mail:javax.mail:1.5.6'
 
 }
-
-
 
 war {
     destinationDir  file('dist/apps')
