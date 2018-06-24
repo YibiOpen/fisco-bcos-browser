@@ -1,0 +1,10 @@
+.gradle
+.idea
+*.iml
+build
+out
+dist
+**/*.crt
+**/*.jks
+**/*.keystore
+**/*-chain.xml

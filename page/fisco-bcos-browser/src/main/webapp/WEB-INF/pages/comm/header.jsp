@@ -22,6 +22,7 @@
                         <li id="LI13"><a href="../singleStatistics/singleStatistics.page">统计指标</a></li>
                         <li id="LI14"><a href="../transactionStatistics/transactionStatistics.page">交易流</a></li>
                         <li id="LI15"><a href="../blockStatistics/blockStatistics.page">共识流</a></li>
+                        <li id="LI10"><a href="../evidence/evidenceDetail.page">查看证据</a></li>
                     </ul>
                 </li>
                 <li id="LI_login" class="hidden-lg hidden-md ">
