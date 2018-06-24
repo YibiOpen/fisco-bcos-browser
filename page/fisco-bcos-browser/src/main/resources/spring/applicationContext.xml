@@ -12,7 +12,7 @@
 
     <!--Loading non-web layer components-->
     <!--Loaded via org.springframework.web.context.ContextLoaderListener in web.xml  -->
-    <context:component-scan base-package="org.bcos.browser">
+    <context:component-scan base-package="org.bcos.browser,com.yibi">
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
 
@@ -23,4 +23,5 @@
 
     <!-- Spring cited database configuration file -->
     <import resource="classpath*:/spring/spring-dao.xml" />
+    <import resource="classpath:/spring/spring-chain.xml" />
 </beans>
