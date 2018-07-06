@@ -23,5 +23,4 @@
 
     <!-- Spring cited database configuration file -->
     <import resource="classpath*:/spring/spring-dao.xml" />
-    <import resource="classpath:/spring/spring-chain.xml" />
 </beans>
