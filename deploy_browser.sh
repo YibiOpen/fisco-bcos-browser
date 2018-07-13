@@ -1,13 +1,16 @@
 #!/bin/bash
 
 ######################  参数配置  ######################
-userName="p_bcos"  #需要创建的数据库用户
-password="Ebkj!@#201805" #需要创建的数据库用户密码
-dbName="product_bcos"     #需要创建的数据库名
-dbIp="rm-bp1g1a6x067o727di.mysql.rds.aliyuncs.com"   #数据库所在机器IP
-tomcatpath="/httx/run/tomcat8/" #tomcat所在路径
+
+userName="test"  #需要创建的数据库用户
+password="123456" #需要创建的数据库用户密码
+passwordRoot="123456" #数据库root账号的密码
+dbName="bcos_browser"     #需要创建的数据库名
+dbIp="192.168.1.100"   #数据库所在机器IP
+tomcatpath="/software/tomcat/" #tomcat所在路径
 
 ###################### 参数配置结束 #################### 
+
 
 
 
