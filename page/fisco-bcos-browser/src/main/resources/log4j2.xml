@@ -31,7 +31,7 @@
 			<AppenderRef ref="async" />
 		</Logger>
 
-		<Logger name="org.bcos.browser" level="debug" additivity="true">
+		<Logger name="org.bcos.browser" level="error" additivity="true">
 			<AppenderRef ref="console" />
 		</Logger>
 
