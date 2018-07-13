@@ -1,16 +1,13 @@
 #!/bin/bash
 
 ######################  参数配置  ######################
-
-userName="test"  #需要创建的数据库用户
-password="123456" #需要创建的数据库用户密码
-passwordRoot="123456" #数据库root账号的密码
-dbName="bcos_browser"     #需要创建的数据库名
-dbIp="192.168.1.100"   #数据库所在机器IP
-tomcatpath="/software/tomcat/" #tomcat所在路径
+userName="p_bcos"  #需要创建的数据库用户
+password="Ebkj!@#201805" #需要创建的数据库用户密码
+dbName="product_bcos"     #需要创建的数据库名
+dbIp="rm-bp1g1a6x067o727di.mysql.rds.aliyuncs.com"   #数据库所在机器IP
+tomcatpath="/httx/run/tomcat8/" #tomcat所在路径
 
 ###################### 参数配置结束 #################### 
-
 
 
 
@@ -29,73 +26,6 @@ deployserverpath="${tomcatpath}/webapps"
 #启动Tomcat bin目录下的项目启动脚本路径
 startbroswer="${tomcatpath}/bin"
 
-
-
-###################### 配置数据库 ######################
-echo "开始配置数据库..." 
- 
-#新建数据库
-mysql -uroot -p${passwordRoot} --silent -h ${dbIp} -e "
-
-drop database if exists ${dbName};
-
-create database ${dbName} default character set utf8 collate utf8_general_ci;
-
-set global event_scheduler = 1;
-
-quit"
-
-
-#删除用户
-mysql -uroot -p${passwordRoot} --silent -h ${dbIp} -e "
-
-delete from mysql.user where User='${userName}';
-
-drop user ${userName}@'%';
-
-drop user ${userName}@'localhost';
-
-quit">/dev/null 2>&1
-
-
-#新建用户
-mysql -uroot -p${passwordRoot} --silent -h ${dbIp} -e "
-
-create user '${userName}'@'localhost' identified by '${password}';
-
-create user '${userName}'@'%' identified by '${password}';
-
-quit"
-
-
-#导入数据库的表
-mysql -uroot -p${passwordRoot} -h ${dbIp} -e "
-use ${dbName};
-
-source ${serverpath}/script/db/bcos_browser_table.sql;
-source ${serverpath}/script/db/bcos_browser_table_v2.sql;
-
-grant all on ${dbName}.* to '${userName}'@'localhost';
-
-grant all on ${dbName}.* to '${userName}'@'%';
-
-grant all on mysql.proc to '${userName}'@'localhost';
-
-grant all on mysql.proc to '${userName}'@'%';
-
-grant execute on procedure ${dbName}.procedure_insert_table_tb_single_stat_by_day to '${userName}'@'localhost';
-
-grant execute on procedure ${dbName}.procedure_insert_table_tb_single_stat_by_day to '${userName}'@'%';
-
-grant execute on procedure ${dbName}.procedure_insert_table_tb_stat_transaction_by_day to '${userName}'@'localhost';
-
-grant execute on procedure ${dbName}.procedure_insert_table_tb_stat_transaction_by_day to '${userName}'@'%';
-
-grant execute on procedure ${dbName}.procedure_insert_table_tb_stat_block_by_day to '${userName}'@'localhost';
-
-grant execute on procedure ${dbName}.procedure_insert_table_tb_stat_block_by_day to '${userName}'@'%';
-
-quit"
 
 ###################### 配置server ######################
 
@@ -176,7 +106,9 @@ sudo rm ${deployserverpath}/fisco-bcos-server* -rf
 sudo cp "${serverpath}/fisco-bcos-server/apps/fisco-bcos-server.war" "${deployserverpath}"
 
 sudo rm ${deployserverpath}/fisco-bcos-browser* -rf
+sudo rm ${deployserverpath}/ROOT* -rf
 sudo cp "${pagepath}/dist/apps/fisco-bcos-browser.war" "${deployserverpath}"
+sudo mv "${deployserverpath}/fisco-bcos-browser.war" "${deployserverpath}/ROOT.war"
 
 sudo sh startup.sh
 

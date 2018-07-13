@@ -32,7 +32,7 @@
 		<Logger name="appmonitor" level="INFO" additivity="false">
 			<AppenderRef ref="monitor" />
 		</Logger>
-		<Root level="error">
+		<Root level="debug">
 			<AppenderRef ref="console" />
 			<AppenderRef ref="fileAppender" />
         </Root>
