@@ -12,7 +12,7 @@
 
     <!--Loading non-web layer components-->
     <!--Loaded via org.springframework.web.context.ContextLoaderListener in web.xml  -->
-    <context:component-scan base-package="org.bcos.browser,com.yibi">
+    <context:component-scan base-package="org.bcos.browser">
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
 

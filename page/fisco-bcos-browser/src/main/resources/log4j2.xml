@@ -3,7 +3,7 @@
 <Configuration status="info" monitorInterval="5">
 	<!-- Define log file input location -->
 	<Properties>
-		<Property name="logPath">logs/</Property>
+		<Property name="logPath">/home/app/fisco-bcos-browser/page/logs/</Property>
 	<!--	/home/app/fisco-bcos-browser/page/logs/-->
 	</Properties>
 
